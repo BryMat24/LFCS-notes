@@ -40,6 +40,8 @@ sudo apt install squid -y
 sudo tail -f /var/log/squid/access.log
 ```
 
+In Squid, http_access controls whether a client is allowed to use the proxy for a request at all. It is not limited to HTTP websites only.
+
 ## Packet Filtering & Firewall
 
 ufw tool, to allow/deny from target and control certain ports
