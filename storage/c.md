@@ -10,6 +10,9 @@
 -   Physical Extent (PE): Smallest chunk of storage in LVM. Logical Volumes are made up of extents from volume group
 
 ```
+sudo apt update
+sudo apt install lvm2 -y
+
 sudo lvmdiskscan # see what PVs we can use
 
 sudo pvcreate /dev/sdc /dev/sdd # create physical volumes to LVM
@@ -17,6 +20,8 @@ sudo pvcreate /dev/sdc /dev/sdd # create physical volumes to LVM
 sudo pvs # see physical devices here
 
 sudo vgcreate my_volume /dev/sdc /dev/sdd # vgcreate [name_of_group] [name_of_pv]
+
+sudo vgextend my_volume /dev/sde
 
 sudo vgreduce my_volume /dev/sde
 
