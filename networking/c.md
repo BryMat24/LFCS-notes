@@ -19,7 +19,7 @@ sudo sysctl -a | grep forward # check if already applied
 -   works by chains, and works through processes added on those chains
 
 ```
-sudo iptables -t nat -A PREROUTING -i <interface> -s 10.0.0.0/24 -p tcp -dport 8080 -j DNAT
+sudo iptables -t nat -A PREROUTING -i <interface> -s 10.0.0.0/24 -p tcp -dport 8080 -j DNAT --to-destination 192.168.1.50:80
 ```
 
 This changes the destination of the packet so that routing uses the new address
